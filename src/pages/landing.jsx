@@ -2,10 +2,12 @@ import { Button } from "@/components/ui/button"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { Link } from "react-router-dom"
 import companies from '../data/companies.json'
-import faq from '../data/faq.json'
+import faqs from '../data/faq.json'
 
 import Autoplay from "embla-carousel-autoplay"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+
 
 
 const LandingPage = () => {
@@ -66,27 +68,41 @@ const LandingPage = () => {
         <Card>
           <CardHeader>
             <CardTitle>For Job Seekers</CardTitle>
-           
+
           </CardHeader>
           <CardContent>
             <p>Search and apply for jobs, track applications, and more.</p>
           </CardContent>
-          
+
         </Card>
         <Card>
           <CardHeader>
             <CardTitle>For Employers</CardTitle>
-           
+
           </CardHeader>
           <CardContent>
             <p>Post jobs, manage applications, and find the best candidates</p>
           </CardContent>
-          
+
         </Card>
 
       </section>
 
       {/* Accordion */}
+
+      <Accordion type="single" collapsible>
+        {faqs.map((faq, i) => (
+          <AccordionItem value={`item-${i+1}`} key={i}>
+            <AccordionTrigger>{faq.question}</AccordionTrigger>
+            <AccordionContent>
+            {faq.answer}
+            </AccordionContent>
+          </AccordionItem>
+
+        ))}
+
+      </Accordion>
+
     </main>
   )
 }
