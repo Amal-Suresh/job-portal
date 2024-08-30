@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button"
 import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel"
 import { Link } from "react-router-dom"
 import companies from '../data/companies.json'
+import faq from '../data/faq.json'
+
 import Autoplay from "embla-carousel-autoplay"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
