@@ -3,6 +3,7 @@ import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carouse
 import { Link } from "react-router-dom"
 import companies from '../data/companies.json'
 import Autoplay from "embla-carousel-autoplay"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 
 
 const LandingPage = () => {
@@ -28,10 +29,11 @@ const LandingPage = () => {
         </Link>
       </div>
       {/* carousel */}
-      <Carousel 
+      <Carousel
         plugins={[
           Autoplay({
-            delay: 2000})
+            delay: 2000
+          })
         ]}
         className="w-full py-10"
       >
@@ -55,10 +57,31 @@ const LandingPage = () => {
 
       {/* banner */}
 
-      <img src="/banner.jpeg" alt="banner"  className="w-full"/>
+      <img src="/banner.jpeg" alt="banner" className="w-full" />
 
-      <section>
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* cards */}
+        <Card>
+          <CardHeader>
+            <CardTitle>For Job Seekers</CardTitle>
+           
+          </CardHeader>
+          <CardContent>
+            <p>Search and apply for jobs, track applications, and more.</p>
+          </CardContent>
+          
+        </Card>
+        <Card>
+          <CardHeader>
+            <CardTitle>For Employers</CardTitle>
+           
+          </CardHeader>
+          <CardContent>
+            <p>Post jobs, manage applications, and find the best candidates</p>
+          </CardContent>
+          
+        </Card>
+
       </section>
 
       {/* Accordion */}
