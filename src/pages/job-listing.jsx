@@ -18,7 +18,6 @@ const JobListingPage = () => {
     loading: loadingJobs
   } = useFetch(getJobs, { location, company_id, searchQuery })
 
-  console.log(jobs);
 
   useEffect(() => {
     if (isLoaded) fnJobs()
@@ -39,9 +38,10 @@ const JobListingPage = () => {
 
       {loadingJobs === false && (
         <div className="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {jobs.length ? (
+          {jobs?.length ? (
             jobs.map((job) => (
-              <JobCard key={job.id} job={job} />
+              <JobCard key={job.id} job={job} savedInit={job?.saved?.length > 0} />
+
 
             ))
           ) : (
