@@ -34,7 +34,7 @@ const router =createBrowserRouter([
         element:<PostJobPage/>
       },
       {
-        path:'/saved-job',
+        path:'/saved-jobs',
         element:<SavedJobsPage/>
       },
       {
